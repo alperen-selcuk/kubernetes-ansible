@@ -19,7 +19,6 @@ ansible ALL=NOPASSWD:   ALL
 
 change all nodes /etc/ssh/sshd_config "PasswordAuthentication yes" config and "systemctl restart sshd"
 
-PasswordAuthentication yes
 
 
 --add ssh key nodes---
