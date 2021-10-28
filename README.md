@@ -17,7 +17,16 @@ passwd ansible
 ansible ALL=NOPASSWD:   ALL
 ```
 
---add ssh key---
+change /etc/ssh/sshd_config
+PasswordAuthentication yes
+
+--add ssh key nodes---
 
 ```
 ssh-keygen -t rsa
+ssh-copy-id -i ~/.ssh/id_rsa.pub master
+ssh-copy-id -i ~/.ssh/id_rsa.pub worker1
+ssh-copy-id -i ~/.ssh/id_rsa.pub worker2
+```
+
+now you can reach all host and work with ansible.
