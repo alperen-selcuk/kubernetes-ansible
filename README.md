@@ -17,8 +17,8 @@ passwd ansible
 ansible ALL=NOPASSWD:   ALL
 ```
 
-change all nodes below config and 'systemctl restart sshd'
-/etc/ssh/sshd_config
+change all nodes /etc/ssh/sshd_config "PasswordAuthentication yes" config and "systemctl restart sshd"
+
 PasswordAuthentication yes
 
 
