@@ -9,7 +9,15 @@ first you can create ansible admin user both nodes and ansible server.
 ```
 useradd -m -d /home/ansible ansible
 passwd ansible
+```
 
----add all hosts-ip to /etc/hosts file---
+---add sudoers ansible user---
 
+```
+ansible ALL=NOPASSWD:   ALL
+```
 
+--add ssh key---
+
+```
+ssh-keygen -t rsa
