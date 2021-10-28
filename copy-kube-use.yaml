@@ -1,0 +1,13 @@
+- hosts: masters
+  become: yes
+  tasks:
+    - name: create .kube directory
+      file:
+        path: /home/ansadmin/.kube
+        state: directory
+        mode: 0755
+    - name: copy admin.conf to user's kube config
+      copy:
+        src: /etc/kubernetes/admin.conf
+        dest: /home/ansadmin/.kube/config
+        remote_src: yes
